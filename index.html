@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>火云影视 · 火云燎原片单 | 以焰色给好片分区的观影指南（huoyunyingshi-top.github.io）</title>
+<meta name="description" content="火云影视 huoyunyingshi-top.github.io 是一个以火焰云纹为灵感的影视索引平台，把影视作品按焰色与热度分区陈列。收录烈焰动作、炽热剧情、熔金史诗、余烬文艺、暗火悬疑、暖焰爱情等分类，每一部都是一团火，帮你按热度挑片。">
+<meta name="keywords" content="火云影视, huoyunyingshi-top.github.io, 火云燎原片单, 焰色分区, 余烬片单, 烈焰动作, 炽热剧情, 熔金史诗, 影视导航">
+<meta name="author" content="火云影视">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://huoyunyingshi-top.github.io">
+<meta property="og:title" content="火云影视 · 火云燎原片单">
+<meta property="og:description" content="huoyunyingshi-top.github.io 以焰色给好片分区的观影指南。">
+<meta property="og:url" content="https://huoyunyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="火云影视 · 火云燎原片单">
+<meta name="twitter:description" content="huoyunyingshi-top.github.io">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --night:#0A0807;--night2:#120D0A;--night3:#1C1410;
+  --flame:#E63A1F;--flame2:#FF5A2C;--flame3:#B82010;
+  --gold:#F0A02E;--gold2:#F7C05A;
+  --ember:#C44A1E;--ember2:#E0722E;
+  --smoke:#6E655C;--smoke2:#9A8F82;
+  --ink:#F5EDE4;--ink2:#D9C9B8;--ink3:#9A8B78;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"STKaiti","KaiTi","Songti SC",serif;
+  --mono:"SFMono-Regular",Consolas,"Courier New",monospace;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);color:var(--ink);background:var(--night);line-height:1.9;overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 50% 0%,rgba(230,58,31,.16),transparent 48%),
+    radial-gradient(circle at 20% 100%,rgba(240,160,46,.07),transparent 42%);
+  background-attachment:fixed;}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.06;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,200,120,.5) 0,transparent 1px);background-size:3px 3px;}
+a{color:inherit;text-decoration:none;transition:.3s;}
+ul,ol{list-style:none;}
+
+/* 余烬滚动条 */
+.ember-bar{background:var(--night2);padding:.4rem 0;overflow:hidden;border-bottom:1px solid var(--night3);position:relative;}
+.ember-bar::before{content:"";position:absolute;left=0;right=0;top=0;height=2px;background:linear-gradient(90deg,var(--flame),var(--gold),var(--flame));}
+.ember-inner{display:flex;gap=2.5rem;animation:scroll 32s linear infinite;white-space:nowrap;font-family:var(--serif);font-size=.78rem;color:var(--ink3);letter-spacing=1px;}
+.ember-inner span{display:inline-block;padding:0 1rem;}
+.ember-inner span strong{color:var(--gold2);}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.wrap{max-width=1180px;margin:0 auto;padding:0 1.2rem;position:relative;z-index:1;}
+
+/* 余烬粒子 */
+.sparks{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.spark{position:absolute;width=3px;height=3px;border-radius=50%;background:var(--gold2);box-shadow:0 0 6px var(--gold);animation:rise 5s ease-in infinite;}
+@keyframes rise{0%{transform:translate(0,0);opacity:0;}20%{opacity:1;}100%{transform:translate(20px,-110vh);opacity:0;}}
+
+/* 头部 火焰 */
+.header{padding=3rem 0 2rem;text-align:center;position:relative;}
+.flame-row{display:flex;justify-content:center;gap=1rem;margin-bottom=1.6rem;align-items:flex-end;}
+.fl{width=18px;height=34px;background:linear-gradient(180deg,var(--gold2),var(--flame2) 40%,var(--flame3));clip-path:polygon(50% 0,100% 100%,0 100%);transform-origin:bottom;}
+.fl:nth-child(1){height=30px;animation:fl 1.2s ease-in-out infinite;}
+.fl:nth-child(2){height=42px;animation:fl 1s ease-in-out infinite .2s;}
+.fl:nth-child(3){height=36px;animation:fl 1.3s ease-in-out infinite .4s;}
+.fl:nth-child(4){height=28px;animation:fl 1.1s ease-in-out infinite .6s;}
+.fl:nth-child(5){height=38px;animation:fl 1.2s ease-in-out infinite .8s;}
+@keyframes fl{0%,100%{transform:scaleY(1);}50%{transform:scaleY(1.22);}}
+.brand{font-family:var(--serif);font-size=clamp(1.9rem,5.6vw,3.7rem);font-weight=900;letter-spacing=7px;color:var(--ink);position:relative;display:inline-block;}
+.brand .hy{color:var(--gold2);}
+.brand::after{content:"";position:absolute;bottom=-8px;left:24%;right:24%;height=3px;background:linear-gradient(90deg,var(--flame),var(--gold));}
+.brand-sub{font-family:var(--mono);font-size=.62rem;color:var(--ink3);letter-spacing=4px;margin-top=.8rem;}
+.url-line{display:inline-block;font-family:var(--mono);font-size=.6rem;color:var(--gold2);background:var(--night2);border:1px solid var(--night3);border-left:4px solid var(--flame);padding=.4rem 1.3rem;margin-top=1rem;}
+
+/* 导航 */
+.nav{margin=1rem 0;}
+.nav-inner{display:flex;justify-content:center;gap=.5rem;flex-wrap:wrap;background:var(--night2);border:1px solid var(--night3);}
+.nav a{padding=.6rem 1.4rem;font-family:var(--serif);font-size=.88rem;font-weight=600;color:var(--ink2);border-right:1px solid var(--night3);letter-spacing=1px;}
+.nav a:last-child{border-right:none;}
+.nav a:hover{color:var(--night);background:linear-gradient(90deg,var(--flame),var(--gold));}
+
+/* Hero 火云 */
+.hero{padding=2rem 0 3rem;}
+.inferno{background:var(--night2);border:2px solid var(--night3);padding=3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.inferno>*{position:relative;z-index:1;}
+.inferno::before{content:"";position:absolute;bottom=0;left=0;right=0;height=55%;background:linear-gradient(180deg,transparent,rgba(230,58,31,.16));}
+.inferno::after{content:"";position:absolute;top=0;left=0;right=0;height=40%;background:linear-gradient(180deg,rgba(240,160,46,.1),transparent);}
+.inferno .heat{font-family:var(--mono);font-size=.6rem;color:var(--ink3);letter-spacing=4px;margin-bottom=.6rem;}
+.inferno h1{font-family:var(--serif);font-size=clamp(1.7rem,4.6vw,3.1rem);font-weight=900;letter-spacing=5px;margin-bottom=.8rem;color:var(--ink);}
+.inferno h1 .hl{color:var(--gold2);}
+.inferno .sub{font-family:var(--mono);font-size=.72rem;color:var(--gold2);letter-spacing=5px;margin-bottom=1.2rem;}
+.inferno-desc{font-size=.88rem;color:var(--ink2);max-width=680px;margin:0 auto 2rem;line-height=2.1;}
+.inferno-stats{display:flex;justify-content:center;gap=3.5rem;flex-wrap:wrap;}
+.ss .num{font-family:var(--serif);font-size=1.5rem;font-weight=900;color:var(--gold2);}
+.ss .label{font-size=.58rem;color:var(--ink3);letter-spacing=2px;}
+
+/* 栏目通用 */
+.section{padding=3rem 0;border-top:1px solid var(--night3);}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom=1.8rem;flex-wrap:wrap;gap=.5rem;}
+.sec-head h2{font-family:var(--serif);font-size=clamp(1.15rem,2.8vw,1.7rem);font-weight=900;color:var(--ink);display:flex;align-items:center;gap=.7rem;letter-spacing=2px;}
+.sec-head .f{width=14px;height=18px;background:linear-gradient(180deg,var(--gold2),var(--flame));clip-path:polygon(50% 0,100% 100%,0 100%);flex-shrink:0;}
+.sec-head .more{font-size=.7rem;color:var(--gold2);font-family:var(--serif);letter-spacing=1px;}
+.sec-sub{font-size=.64rem;color:var(--ink3);width:100%;margin-top:.3rem;font-family:var(--mono);}
+
+/* 焰色分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap=.8rem;}
+.cat-card{background:var(--night2);border:1px solid var(--night3);padding=1.3rem .8rem;text-align:center;transition:.3s;cursor:pointer;}
+.cat-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(230,58,31,.12));opacity=0;transition:.3s;}
+.cat-card{position:relative;overflow:hidden;}
+.cat-card:hover{border-color:var(--flame);background:var(--night3);transform:translateY(-3px);}
+.cat-card:hover::before{opacity:1;}
+.cat-icon{font-size=1.9rem;margin-bottom=.5rem;display:block;}
+.cat-name{font-family:var(--serif);font-size=.88rem;font-weight=700;color:var(--ink);margin-bottom=.2rem;}
+.cat-count{font-family:var(--mono);font-size=.56rem;color:var(--ink3);}
+
+/* 电影卡片 火幕 */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap=1.2rem;}
+.movie-card{background:var(--night2);border:1px solid var(--night3);transition=.3s;overflow:hidden;}
+.movie-card:hover{border-color:var(--flame);transform:translateY(-4px);box-shadow:0 8px 24px rgba(230,58,31,.22);}
+.movie-cover{height=210px;border-radius=3px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.movie-cover::after{content:"";position:absolute;inset:0;opacity=.15;background:repeating-linear-gradient(90deg,transparent,transparent 16px,rgba(255,200,120,.3) 16px,rgba(255,200,120,.3) 32px);}
+.mc1{background:linear-gradient(160deg,#7A1A0C,#C43A1E);}
+.mc2{background:linear-gradient(160deg,#9A4A10,#D0722E);}
+.mc3{background:linear-gradient(160deg,#B07A10,#E0A02E);}
+.mc4{background:linear-gradient(160deg,#5A1218,#8A2028);}
+.mc5{background:linear-gradient(160deg,#3A2A10,#6A4A1E);}
+.mc6{background:linear-gradient(160deg,#1A1410,#3A3028);}
+.movie-cover .cover-text{font-family:var(--serif);font-size=.8rem;color:var(--ink);text-align:center;padding=1rem;font-weight=700;letter-spacing=1px;position:relative;z-index:1;}
+.movie-cover .badge{position:absolute;top=.5rem;right=.5rem;font-family:var(--mono);font-size=.46rem;font-weight=700;padding=.2rem .5rem;z-index:2;background:var(--flame);color:var(--ink);}
+.badge-fire{background:var(--gold)!important;color:var(--night)!important;}
+.movie-info{padding=.9rem;}
+.movie-info h3{font-family:var(--serif);font-size=.82rem;font-weight=700;color:var(--ink);margin-bottom=.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.movie-info .meta{font-family:var(--mono);font-size=.52rem;color:var(--ink3);margin-bottom=.5rem;}
+.movie-info .tags{display:flex;gap=.3rem;flex-wrap:wrap;}
+.tag{font-family:var(--mono);font-size=.5rem;padding=.15rem .5rem;background:var(--night3);color:var(--gold2);}
+
+/* 焰色分区 */
+.heat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap=1.2rem;}
+.heat-card{background:var(--night2);border:1px solid var(--night3);padding=1.5rem;transition=.3s;border-left:5px solid var(--flame);}
+.heat-card:nth-child(2){border-left-color:var(--gold);}
+.heat-card:nth-child(3){border-left-color:var(--ember);}
+.heat-card:nth-child(4){border-left-color:var(--smoke2);}
+.heat-card:hover{border-color:var(--flame);background:var(--night3);transform:translateX(4px);}
+.heat-card .h-no{font-family:var(--mono);font-size=.56rem;color:var(--gold2);letter-spacing=2px;margin-bottom=.5rem;}
+.heat-card h4{font-family:var(--serif);font-size=.92rem;font-weight=900;color:var(--ink);margin-bottom=.5rem;}
+.heat-card p{font-size=.74rem;color:var(--ink2);line-height=1.85;}
+
+/* 排行榜 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.rank-panel{background:var(--night2);border:1px solid var(--night3);padding=1.5rem;}
+.rank-panel h3{font-family:var(--serif);font-size=1rem;font-weight=900;color:var(--gold2);margin-bottom=1.2rem;padding-bottom=.6rem;border-bottom:1px solid var(--night3);letter-spacing=2px;}
+.rank-item{display:flex;align-items:center;gap=.9rem;padding:.6rem 0;border-bottom:1px dotted var(--night3);}
+.rank-item:last-child{border-bottom:none;}
+.rank-pos{width=32px;height=32px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size=.8rem;font-weight=900;background:var(--night3);color:var(--ink3);flex-shrink:0;}
+.rank-pos.top{background:linear-gradient(135deg,var(--flame),var(--gold));color:var(--night);}
+.rank-detail{flex:1;min-width:0;}
+.rank-detail h4{font-family:var(--serif);font-size=.8rem;font-weight=700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rank-detail p{font-family:var(--mono);font-size=.52rem;color:var(--ink3);}
+.rank-score{font-family:var(--serif);font-size=.82rem;font-weight=900;color:var(--gold2);flex-shrink:0;}
+
+/* 指引 */
+.guide-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.guide-card{background:var(--night2);border:1px solid var(--night3);padding=1.8rem;}
+.guide-card h3{font-family:var(--serif);font-size=.95rem;font-weight=900;color:var(--gold2);margin-bottom=1.2rem;letter-spacing=1px;}
+.guide-card p,.guide-card li{font-size=.78rem;color:var(--ink2);line-height=2.05;}
+.guide-card ul{padding-left=1.3rem;}
+.guide-card li{position:relative;}
+.guide-card li::before{content:"›";position:absolute;left=-1rem;font-size=.9rem;color:var(--flame);font-weight:900;}
+.guide-card strong{color:var(--ink);}
+
+/* 合规 */
+.compliance{background:var(--night2);border:1px solid var(--night3);padding=1.9rem;}
+.compliance h3{font-family:var(--serif);font-size=1.1rem;font-weight=900;color:var(--ink);margin-bottom=1.2rem;text-align:center;letter-spacing=3px;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap=1rem;}
+.comp-item{padding=1.2rem;background:var(--night3);border-left:4px solid var(--flame);}
+.comp-item:nth-child(2){border-left-color:var(--gold);}
+.comp-item:nth-child(3){border-left-color:var(--ember);}
+.comp-item:nth-child(4){border-left-color:var(--smoke2);}
+.comp-item h4{font-family:var(--mono);font-size=.58rem;font-weight=700;color:var(--gold2);margin-bottom=.4rem;letter-spacing=1px;}
+.comp-item p{font-size=.65rem;color:var(--ink3);line-height=1.7;}
+
+/* 页脚 */
+.footer{background:#050403;padding=3.5rem 0 1.5rem;margin-top=3rem;border-top:2px solid var(--flame);}
+.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap=1.8rem;margin-bottom=2rem;}
+.footer-col h4{font-family:var(--serif);font-size=.9rem;font-weight=900;color:var(--gold2);margin-bottom=.8rem;letter-spacing=1px;}
+.footer-col p,.footer-col li{font-size=.7rem;color:var(--ink3);margin-bottom=.4rem;line-height=1.7;}
+.footer-col a{color:var(--ink3);}
+.footer-col a:hover{color:var(--gold2);}
+.footer-url{font-family:var(--mono);font-size=.54rem!important;color:var(--gold2)!important;}
+.footer-bottom{text-align:center;padding-top=1.5rem;border-top:1px solid var(--night3);font-family:var(--mono);font-size=.56rem;color:var(--ink3);}
+
+@media(max-width:768px){
+  .rank-wrap,.guide-wrap{grid-template-columns:1fr;}
+  .inferno-stats{gap=1.5rem;}
+}
+@media(max-width:480px){
+  .inferno{padding=2.5rem 1.2rem;}
+  .inferno h1{font-size=1.4rem;}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+  .movie-grid,.heat-grid{grid-template-columns:repeat(2,1fr);}
+  .movie-cover{height=180px;}
+  .nav a{padding=.5rem .8rem;font-size=.76rem;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="sparks" id="sparks"></div>
+
+<div class="ember-bar"><div class="ember-inner">
+  <span>🔥 <strong>火云影视</strong> · 火云燎原片单 · 以焰色给好片分区 · 网址 huoyunyingshi-top.github.io · 余烬片单 🔥</span>
+  <span>🔥 <strong>火云影视</strong> · 火云燎原片单 · 以焰色给好片分区 · 网址 huoyunyingshi-top.github.io · 余烬片单 🔥</span>
+</div></div>
+
+<div class="wrap">
+  <header class="header">
+    <div class="flame-row">
+      <div class="fl"></div>
+      <div class="fl"></div>
+      <div class="fl"></div>
+      <div class="fl"></div>
+      <div class="fl"></div>
+    </div>
+    <div class="brand"><span class="hy">火云</span>影视</div>
+    <div class="brand-sub">— INFERNO INDEX —</div>
+    <div class="url-line">huoyunyingshi-top.github.io</div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home">首页</a>
+      <a href="#cats">焰色分类</a>
+      <a href="#heat">火候分区</a>
+      <a href="#movies">余烬片单</a>
+      <a href="#rank">热榜</a>
+      <a href="#guide">燎原指南</a>
+      <a href="#compliance">合规声明</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="inferno">
+      <div class="heat">HEAT LEVEL // 烈焰 · 炽热 · 熔金 · 余烬 · 暗火</div>
+      <h1><span class="hl">火云</span>影视</h1>
+      <div class="sub">— INFERNO INDEX —</div>
+      <p class="inferno-desc">火云影视是一个以火焰云纹为灵感的影视索引平台。我们不按类型分，而按火候分——烈焰动作、炽热剧情、熔金史诗、余烬文艺、暗火悬疑、暖焰爱情，每一部都是一团火。今天想烧到几度，就点哪一档。</p>
+      <div class="inferno-stats">
+        <div class="ss"><div class="num">13,200+</div><div class="label">火 种 索 引</div></div>
+        <div class="ss"><div class="num">5档</div><div class="label">火 候 分 区</div></div>
+        <div class="ss"><div class="num">12色</div><div class="label">焰 色 标 签</div></div>
+        <div class="ss"><div class="num">炽热</div><div class="label">挑 片 体 验</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cats">
+    <div class="sec-head">
+      <h2><span class="f"></span> 焰色分类</h2>
+      <a href="#" class="more">全部 →</a>
+    </div>
+    <p class="sec-sub">// flame tags — 十二种焰色标签</p>
+    <div class="cat-grid">
+      <div class="cat-card"><span class="cat-icon">🔥</span><div class="cat-name">烈焰动作</div><div class="cat-count">1,800+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌋</span><div class="cat-name">炽热剧情</div><div class="cat-count">2,200+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🏆</span><div class="cat-name">熔金史诗</div><div class="cat-count">1,400+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🪵</span><div class="cat-name">余烬文艺</div><div class="cat-count">1,600+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌑</span><div class="cat-name">暗火悬疑</div><div class="cat-count">980+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🧯</span><div class="cat-name">暖焰爱情</div><div class="cat-count">1,600+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎭</span><div class="cat-name">焰心喜剧</div><div class="cat-count">1,400+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🛡️</span><div class="cat-name">烽火历史</div><div class="cat-count">1,300+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌿</span><div class="cat-name">微火治愈</div><div class="cat-count">1,300+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">⚙️</span><div class="cat-name">锻炉剧集</div><div class="cat-count">4,500+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎬</span><div class="cat-name">经典火种</div><div class="cat-count">1,900+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🏅</span><div class="cat-name">高热精选</div><div class="cat-count">1,600+ 部</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="heat">
+    <div class="sec-head">
+      <h2><span class="f"></span> 火候分区</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// heat levels — 五档火候</p>
+    <div class="heat-grid">
+      <div class="heat-card"><div class="h-no">HEAT 05</div><h4>🔥 烈焰档</h4><p>动作、犯罪、战争，火力全开，肾上腺素直接拉满，适合想发泄的时候。</p></div>
+      <div class="heat-card"><div class="h-no">HEAT 04</div><h4>🌋 炽热档</h4><p>剧情、史诗、年代，情绪饱满温度高，看完久久不能平静。</p></div>
+      <div class="heat-card"><div class="h-no">HEAT 03</div><h4>🏆 熔金档</h4><p>经典、获奖、影史留名，含金量高，适合想看好片不踩雷的时候。</p></div>
+      <div class="heat-card"><div class="h-no">HEAT 02</div><h4>🪵 余烬档</h4><p>文艺、治愈、生活流，火已熄但余温还在，适合安静的深夜。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="movies">
+    <div class="sec-head">
+      <h2><span class="f"></span> 余烬片单</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// embers — 五档火候精选</p>
+    <div class="movie-grid">
+      <div class="movie-card"><div class="movie-cover mc1"><span class="badge badge-fire">烈焰</span><div class="cover-text">疯狂的麦克斯4<br>2015 · 动作/科幻</div></div><div class="movie-info"><h3>疯狂的麦克斯4</h3><div class="meta">动作/科幻 · 2015 · 乔治·米勒</div><div class="tags"><span class="tag">烈焰</span><span class="tag">爽片</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc2"><span class="badge">炽热</span><div class="cover-text">肖申克的救赎<br>1994 · 剧情</div></div><div class="movie-info"><h3>肖申克的救赎</h3><div class="meta">剧情 · 1994 · 弗兰克·德拉邦特</div><div class="tags"><span class="tag">炽热</span><span class="tag">9.9分</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc3"><span class="badge badge-fire">熔金</span><div class="cover-text">泰坦尼克号<br>1997 · 爱情/灾难</div></div><div class="movie-info"><h3>泰坦尼克号</h3><div class="meta">爱情/灾难 · 1997 · 卡梅隆</div><div class="tags"><span class="tag">熔金</span><span class="tag">经典</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc4"><span class="badge">余烬</span><div class="cover-text">海边的曼彻斯特<br>2016 · 剧情</div></div><div class="movie-info"><h3>海边的曼彻斯特</h3><div class="meta">剧情 · 2016 · 肯尼斯·洛纳根</div><div class="tags"><span class="tag">余烬</span><span class="tag">沉静</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc5"><span class="badge">暗火</span><div class="cover-text">看不见的客人<br>2016 · 悬疑/犯罪</div></div><div class="movie-info"><h3>看不见的客人</h3><div class="meta">悬疑/犯罪 · 2016 · 奥里奥尔</div><div class="tags"><span class="tag">暗火</span><span class="tag">反转</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc6"><span class="badge badge-fire">暖焰</span><div class="cover-text">情书<br>1995 · 爱情</div></div><div class="movie-info"><h3>情书</h3><div class="meta">爱情 · 1995 · 岩井俊二</div><div class="tags"><span class="tag">暖焰</span><span class="tag">纯爱</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="rank">
+    <div class="sec-head">
+      <h2><span class="f"></span> 热榜</h2>
+      <a href="#" class="more">完整榜单 →</a>
+    </div>
+    <p class="sec-sub">// heat chart — 两档火候口碑榜</p>
+    <div class="rank-wrap">
+      <div class="rank-panel">
+        <h3>🔥 烈焰·炽热榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>肖申克的救赎</h4><p>剧情 · 1994</p></div><div class="rank-score">9.9</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>疯狂的麦克斯4</h4><p>动作/科幻 · 2015</p></div><div class="rank-score">9.6</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>盗梦空间</h4><p>科幻/悬疑 · 2010</p></div><div class="rank-score">9.5</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>活着</h4><p>剧情 · 1994</p></div><div class="rank-score">9.8</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>阿甘正传</h4><p>剧情 · 1994</p></div><div class="rank-score">9.7</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>霸王别姬</h4><p>剧情 · 1993</p></div><div class="rank-score">9.9</div></div>
+      </div>
+      <div class="rank-panel">
+        <h3>🪵 余烬·暗火榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>海边的曼彻斯特</h4><p>剧情 · 2016</p></div><div class="rank-score">9.4</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>隐入尘烟</h4><p>剧情/乡土 · 2022</p></div><div class="rank-score">9.4</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>小森林</h4><p>剧情/生活 · 2014</p></div><div class="rank-score">9.2</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>海街日记</h4><p>家庭/剧情 · 2015</p></div><div class="rank-score">9.3</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>路边野餐</h4><p>文艺/实验 · 2015</p></div><div class="rank-score">9.1</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>情书</h4><p>爱情 · 1995</p></div><div class="rank-score">9.4</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="sec-head">
+      <h2><span class="f"></span> 燎原指南</h2>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-card">
+        <h3>按火候挑片四步</h3>
+        <ul>
+          <li><strong>看情绪定火候：</strong>想发泄看烈焰，想感动看炽热，想安静看余烬</li>
+          <li><strong>看时段定温度：</strong>白天看高热，深夜看低温</li>
+          <li><strong>看需求定档位：</strong>想爽看烈焰，想哭看炽热，想思考看暗火</li>
+          <li><strong>点色即看：</strong>焰色就是入口，不用二次筛选</li>
+          <li><strong>内链切换：</strong>所有导航链接使用 # 锚点，瞬间切版无需刷新</li>
+          <li><strong>移动端：</strong>手机竖屏自适应，通勤路上也能燎原</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3>关于火云影视</h3>
+        <p>火云影视（<strong>huoyunyingshi-top.github.io</strong>）是一个以火焰云纹为灵感的影视索引静态站点。</p>
+        <p>我们收录动作、剧情、史诗、文艺、悬疑、爱情等各类正规影视作品，用火候分区的方式帮你按热度挑片，不按算法推荐。</p>
+        <p>本站为<strong>纯静态单页设计</strong>，符合必应搜索引擎收录规则，不生成robots.txt和sitemap.xml，所有链接内联，加载极速。</p>
+        <p>官方网址：<strong>https://huoyunyingshi-top.github.io</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compliance">
+    <div class="sec-head">
+      <h2><span class="f"></span> 合规声明</h2>
+    </div>
+    <div class="compliance">
+      <h3>✦ 火云有序 · 规约明示 ✦</h3>
+      <div class="comp-grid">
+        <div class="comp-item"><h4>CONTENT</h4><p>本站仅提供正规影视作品索引，不含任何色情、暴力、恐怖等违规内容。所有索引均指向合法公开渠道。</p></div>
+        <div class="comp-item"><h4>COPYRIGHT</h4><p>尊重版权方权益，支持正版观影。本站不存储、不提供任何视频文件下载或在线播放服务。</p></div>
+        <div class="comp-item"><h4>DISCLAIMER</h4><p>本站为静态资讯导航页面，不对第三方链接内容负责。用户访问第三方资源需自行判断合规性。</p></div>
+        <div class="comp-item"><h4>STYLE</h4><p>本站采用火焰云纹、余烬流动作为视觉风格，倡导炽热、克制、有温度的观影审美。</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🔥 火云影视</h4>
+        <p>火云燎原片单，以焰色给好片分区。</p>
+        <p>网址：<br><a href="https://huoyunyingshi-top.github.io" class="footer-url">huoyunyingshi-top.github.io</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul><li><a href="#home">首页</a></li><li><a href="#cats">焰色分类</a></li><li><a href="#heat">火候分区</a></li><li><a href="#movies">余烬片单</a></li><li><a href="#rank">热榜</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>帮助</h4>
+        <ul><li><a href="#guide">燎原指南</a></li><li><a href="#compliance">合规声明</a></li><li><a href="#">常见问题</a></li><li><a href="#">反馈建议</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <ul><li>静态单页设计</li><li>必应收录优化</li><li>移动端自适应</li><li>© 2026 火云影视</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>火云影视 huoyunyingshi-top.github.io ｜ 五档火候分区 ｜ 余烬片单 ｜ 静态单页设计 ｜ 正规影视索引</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 余烬粒子
+const box=document.getElementById('sparks');
+for(let i=0;i<45;i++){
+  const s=document.createElement('div');
+  s.className='spark';
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDelay=(Math.random()*5)+'s';
+  s.style.animationDuration=(Math.random()*3+4)+'s';
+  const w=(Math.random()*3+2)+'px';
+  s.style.width=w;s.style.height=w;
+  box.appendChild(s);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const h=this.getAttribute('href');
+    if(h==='#'){e.preventDefault();return;}
+    const t=document.querySelector(h);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
